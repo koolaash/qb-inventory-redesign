@@ -1,5 +1,7 @@
 # qb-inventory
-![image](https://github.com/user-attachments/assets/01166470-4e1a-4d7b-808a-ed3de1133daa)
+![image](./html/ss1.png)
+![image](./html/ss2.png)
+![image](./html/ss3.png)
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
