@@ -85,7 +85,7 @@ body {
     position: fixed;
     top: 15vh;
     left: 14.3vw;
-    width: 30.4vw;
+    width: 32.4vw;
     z-index: 1002;
     animation: slideInTop 0.5s ease-out;
 }
@@ -104,8 +104,8 @@ body {
 .other-inventory-header {
     position: fixed;
     top: 15vh;
-    right: 14vw;
-    width: 28vw;
+    right: 15vw;
+    width: 26.5vw;
     z-index: 1002;
 }
 
@@ -170,8 +170,8 @@ body {
 
 .item-slot-amount {
     position: absolute;
-    top: 10px;
-    right: 8px;
+    top: -7px;
+    right: 2px;
     color: #E5E7EB;
     font-size: 12px;
 }
