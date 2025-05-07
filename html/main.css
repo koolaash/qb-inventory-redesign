@@ -329,8 +329,8 @@ body {
     color: #E5E7EB;
     animation: slideUp 0.3s ease-out;
 
-    width: 90px;
-    height: 120px;
+    width: 75px;
+    height: 100px;
 }
 
 @keyframes slideUp {
@@ -378,4 +378,30 @@ body {
     width: 80%;
     height: 80%;
     object-fit: contain;
+}
+
+.nitem-slot-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nitem-slot-img img {
+    width: 90%;
+    height: 80%;
+    object-fit: contain;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nitem-slot-amount {
+    position: absolute;
+    top: 30px;
+    right: 6px;
+    color: #E5E7EB;
+    font-size: 12px;
 }
