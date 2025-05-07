@@ -365,3 +365,17 @@ body {
 .item-slot-label {
     color: transparent !important;
 }
+
+.item-slot-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.item-slot-img img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
