@@ -1,4 +1,9 @@
 # qb-inventory
+
+![](https://img.shields.io/github/downloads/koolaash/qb-inventory-redesign/total?logo=github)
+![](https://img.shields.io/github/downloads/koolaash/qb-inventory-redesign/latest/total?logo=github)
+![](https://img.shields.io/github/v/release/koolaash/qb-inventory-redesign?logo=github)
+
 ![image](./html/ss1.png)
 ![image](./html/ss2.png)
 ![image](./html/ss3.png)
