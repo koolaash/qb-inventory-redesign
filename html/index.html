@@ -121,20 +121,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="notification-container" v-if="showNotification">
-                <div class="notification-slot">
-                    <div class="notification-title">{{ notificationType }}</div>
-                    <div class="nitem-slot-img">
-                        <img :src="notificationImage" alt="" />
-                    </div>
-                    <div class="nitem-slot-amount">{{ notificationAmount }}</div>
-                    <div class="nitem-slot-label">{{ notificationText }}</div>
-                </div>
-            </div>
-
-            <div class="context-menu" v-if="showContextMenu" :style="contextMenuPosition">
+             </div>
+ 
+             <div class="notification-container" v-if="showNotification">
+                 <div class="notification-slot">
+                   <img :src="notificationImage" alt="" />
+                    <div class="notification-text">
+                        <div>{{ notificationText }}</div>
+                        <div class="notification-subtext">Used x{{ notificationAmount }}</div>
+                     </div>
+                 </div>
+             </div>
+ 
+             <div class="context-menu" v-if="showContextMenu" :style="contextMenuPosition">
                 <li v-if="contextMenuItem.useable" @click="useItem(contextMenuItem)">
                     <i class="fas fa-hand-pointer"></i> Use
                 </li>

@@ -313,10 +313,11 @@ const InventoryContainer = Vue.createApp({
             if (!slotElement) return;
             const ghostElement = this.createGhostElement(slotElement);
             document.body.appendChild(ghostElement);
-            const offsetX = ghostElement.offsetWidth / 2;
-            const offsetY = ghostElement.offsetHeight / 2;
-            ghostElement.style.left = `${event.clientX - offsetX}px`;
-            ghostElement.style.top = `${event.clientY - offsetY}px`;
+        
+            // Set initial position to (0, 0) since transform will be used later
+            ghostElement.style.left = "0px";
+            ghostElement.style.top = "0px";
+            ghostElement.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
             this.ghostElement = ghostElement;
             this.currentlyDraggingItem = item;
             this.currentlyDraggingSlot = slot;
@@ -325,6 +326,8 @@ const InventoryContainer = Vue.createApp({
             this.dragStartInventoryType = inventoryType;
             this.showContextMenu = false;
         },
+        
+    
         createGhostElement(slotElement) {
             const ghostElement = slotElement.cloneNode(true);
             ghostElement.style.position = "absolute";
@@ -334,15 +337,26 @@ const InventoryContainer = Vue.createApp({
             ghostElement.style.width = getComputedStyle(slotElement).width;
             ghostElement.style.height = getComputedStyle(slotElement).height;
             ghostElement.style.boxSizing = "border-box";
+            
+            // Enhance performance with GPU acceleration
+            ghostElement.style.willChange = "transform";
+            ghostElement.style.transition = "transform 0.02s linear";
             return ghostElement;
         },
+        
         drag(event) {
             if (!this.currentlyDraggingItem) return;
-            const centeredX = event.clientX - this.ghostElement.offsetWidth / 2;
-            const centeredY = event.clientY - this.ghostElement.offsetHeight / 2;
-            this.ghostElement.style.left = `${centeredX}px`;
-            this.ghostElement.style.top = `${centeredY}px`;
+        
+            // Use requestAnimationFrame for smoother animation
+            requestAnimationFrame(() => {
+                // Directly set the transform without calculating offsets again
+                this.ghostElement.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+            });
         },
+        
+        
+        
+         
         endDrag(event) {
             if (!this.currentlyDraggingItem) {
                 return;
